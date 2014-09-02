@@ -1,0 +1,26 @@
+{
+    "name": "torann/relateiq",
+    "description": "RelateIQ API v2 client for Laravel & standalone projects.",
+    "keywords": ["laravel", "laravel4", "relateiq", "api", "wrapper", "standalone"],
+    "license": "BSD 2-Clause",
+    "authors": [
+        {
+            "name": "Daniel Stainback",
+            "email": "daniel@lyften.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Torann\\RelateIQ": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "minimum-stability": "stable"
+}
