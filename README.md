@@ -4,6 +4,11 @@
 
 ----------
 
+## About
+
+This will help you access the SalesforceIQ REST API using PHP.  It's a nice API, especially compared to the main Salesforced SOAP API.  [Documentation can be found here](https://api.salesforceiq.com). 
+
+
 ## Installation
 
 - [SalesforceIQ Client on Packagist](https://packagist.org/packages/waschick/salesforceiq)
