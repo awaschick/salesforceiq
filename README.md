@@ -6,7 +6,7 @@
 
 ## About
 
-This will help you access the SalesforceIQ REST API using PHP.  It's simple enough that you can almost do what you want with basic Curl calls... almost.  But, a little framework help sometimes makes things a more pleasant.  [Documentation can be found here](https://api.salesforceiq.com). 
+This will help you access the SalesforceIQ REST API using PHP.  The API is simple enough that you can almost do what you want with basic Curl calls... almost.  But, a little sdk help sometimes makes things more pleasant.  [Documentation can be found here](https://api.salesforceiq.com). 
 
 
 ## Installation
