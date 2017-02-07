@@ -1,18 +1,18 @@
-# RelateIQ Client - Beta
+# SalesforceIQ Client - Beta
 
-[![Latest Stable Version](https://poser.pugx.org/torann/relateiq/v/stable.png)](https://packagist.org/packages/torann/relateiq) [![Total Downloads](https://poser.pugx.org/torann/relateiq/downloads.png)](https://packagist.org/packages/torann/relateiq)
+[![Latest Stable Version](https://poser.pugx.org/waschick/salesforceiq/v/stable.png)](https://packagist.org/packages/waschick/salesforceiq) [![Total Downloads](https://poser.pugx.org/waschick/salesforceiq/downloads.png)](https://packagist.org/packages/waschick/salesforceiq)
 
 ----------
 
 ## Installation
 
-- [RelateIQ Client on Packagist](https://packagist.org/packages/torann/relateiq)
-- [RelateIQ Client on GitHub](https://github.com/torann/relateiq)
+- [SalesforceIQ Client on Packagist](https://packagist.org/packages/waschick/salesforceiq)
+- [SalesforceIQ Client on GitHub](https://github.com/waschick/salesforce)
+- [Forked from Torann/RelateIQ](https://github.com/torann/relateiq)
 
-To get the latest version of RelateIQ Client simply require it in your `composer.json` file.
 
 ~~~
-"torann/relateiq": "dev-master"
+"waschick/salesforceiq": "dev-master"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
@@ -20,40 +20,40 @@ You'll then need to run `composer install` to download it and have the autoloade
 
 ## Laravel Setup
 
-Once RelateIQ Client is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
+Once SalesforceIQ Client is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
 
 
 ```php
-'Torann\RelateIQ\ServiceProvider'
+'Waschick\SalesforceIQ\ServiceProvider'
 ```
 
 > There is no need to add the Facade, the package will add it for you.
 
 
-### Add RelateIQ to the Services Config 
+### Add SalesforceIQ to the Services Config 
 
-Open up `app/config/services.php` and add `relateiq`.
+Open up `app/config/services.php` and add `salesforceiq`.
 
 
 ```php
-'relateiq' => array(
+'salesforceiq' => array(
 	'key'    => '66cfba7f741d645a488c0b21ebFAKE',
 	'secret' => 'effd5216acac6314219ALSOFAKE',
 ),
 ```
 
-## RelateIQ Client Instance
+## SalesforceIQ Client Instance
 
 
 ```php
-$riq = new RelateIQ('66cfba7f741d645a488c0b21ebFAKE', 'effd5216acac6314219ALSOFAKE');
+$riq = new SalesforceIQ('66cfba7f741d645a488c0b21ebFAKE', 'effd5216acac6314219ALSOFAKE');
 $contact = $riq->getContact('741d645a488c0b21eb');
 ```
 
-For Laravel simple use the facade `RelateIQ`. 
+For Laravel simple use the facade `SalesforceIQ`. 
 
 ```php
-$contact = new RelateIQ::getContact('741d645a488c0b21eb');
+$contact = new SalesforceIQ::getContact('741d645a488c0b21eb');
 ```
 
 ## Methods
@@ -63,7 +63,7 @@ A POST request which creates a new Contact object and returns the created Contac
 
 **Parameters:**
 
-- `:properties` Attributes that are comprised of a contact object in RelateIQ. The following attributes are supported through the API:
+- `:properties` Attributes that are comprised of a contact object in SalesforceIQ. The following attributes are supported through the API:
   - name
   - email **(Required)**
   - phone
@@ -75,7 +75,7 @@ A POST request which creates a new Contact object and returns the created Contac
 **Example**
 
 ```php
-$contact = RelateIQ::newContact(array(
+$contact = SalesforceIQ::newContact(array(
     'name'    => 'John Doe',
     'email'   => 'john.doe@mail.box',
     'phone'   => '555-4454',
@@ -96,7 +96,7 @@ A GET request which pulls a specific Contact by ID, Email or Phone Number
 **Example**
 
 ```php
-$contact = new RelateIQ::getContact('741d645a488c0b21eb');
+$contact = new SalesforceIQ::getContact('741d645a488c0b21eb');
 ```
 
 
@@ -106,7 +106,7 @@ A GET request which fetches a paginated collection of all Contacts in your Organ
 **Example**
 
 ```php
-$contacts = new RelateIQ::getContacts();
+$contacts = new SalesforceIQ::getContacts();
 ```
 
 ### Update a Contact
@@ -115,7 +115,7 @@ A PUT request which updates the details of a specific Contact.
 **Example**
 
 ```php
-$contact = new RelateIQ::getContact('741d645a488c0b21eb');
+$contact = new SalesforceIQ::getContact('741d645a488c0b21eb');
 $contact->name = 'Sally Doe';
 $contact->save();
 ```
@@ -125,3 +125,11 @@ $contact->save();
 #### v0.1.0
 
 - First release
+
+#### v.0.2.0
+
+- Forked from Torann/RelateIQ
+- Updated Copyright
+- Updated Namespaces
+- Changed endpoint URL to Salesforce domain 
+
