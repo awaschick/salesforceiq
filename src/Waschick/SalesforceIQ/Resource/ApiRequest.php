@@ -6,7 +6,7 @@ class ApiRequest {
 
     protected $key = "";
     protected $secret = "";
-    protected $apiEndpoint = "https://api.relateiq.com/v2/";
+    protected $apiEndpoint = "https://api.salesforceiq.com/v2/";
     protected $debug = false;
     protected $data = array();
 
