@@ -8,12 +8,12 @@ class RiqListField {
 
     function __construct($field)
     {
-        $this->id = $field->id;
-        $this->name = $field->name;
-        $this->isMultiSelect = $field->isMultiSelect;
-        $this->isEditable = $field->isEditable;
-        $this->dataType = $field->dataType;
-        $this->listOptions = $field->listOptions;
+        $this->id = $field['id'];
+        $this->name = $field['name'];
+        $this->isMultiSelect = $field['isMultiSelect'];
+        $this->isEditable = $field['isEditable'];
+        $this->dataType = $field['dataType'];
+        $this->listOptions = $field['listOptions'];
     }
 
     public function resolveFieldValue($input)
