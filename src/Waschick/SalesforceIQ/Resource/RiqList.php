@@ -1,4 +1,4 @@
-<?php namespace Torann\RelateIQ\Resource;
+<?php namespace Waschick\SalesforceIQ\Resource;
 
 use DateTime;
 use DateTimeZone;

@@ -1,4 +1,4 @@
-<?php namespace Torann\RelateIQ;
+<?php namespace Waschick\SalesforceIQ;
 
 use Illuminate\Foundation\AliasLoader;
 
@@ -19,7 +19,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
     public function boot()
     {
         // Add 'Assets' facade alias
-        AliasLoader::getInstance()->alias('RelateIQ', 'Bubba\Support\RelateIQ\Facade');
+        AliasLoader::getInstance()->alias('SalesforceIQ', 'Bubba\Support\SalesforceIQ\Facade');
     }
 
     /**
@@ -30,9 +30,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
     public function register()
     {
         // Bind 'hashids' shared component to the IoC container
-        $this->app->singleton('relateiq', function($app)
+        $this->app->singleton('salesforceiq', function($app)
         {
-            $config = $app['config']['services.relateiq'];
+            $config = $app['config']['services.salesforceiq'];
 
             return new Client($config['key'], $config['secret']);
         });

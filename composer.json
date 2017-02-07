@@ -1,12 +1,12 @@
 {
-    "name": "torann/relateiq",
-    "description": "RelateIQ API v2 client for Laravel & standalone projects.",
+    "name": "waschick/salesforceiq",
+    "description": "SalesforceIQ (RelateIQ) API v2 client for Laravel & standalone projects. Forked from torann/relateiq.",
     "keywords": ["laravel", "laravel4", "relateiq", "api", "wrapper", "standalone"],
     "license": "BSD 2-Clause",
     "authors": [
         {
-            "name": "Daniel Stainback",
-            "email": "daniel@lyften.com"
+            "name": "Andy Waschick",
+            "email": "waschick@gmail.com"
         }
     ],
     "require": {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Torann\\RelateIQ": "src/"
+            "Waschick\\SalesforceIQ": "src/"
         }
     },
     "extra": {

@@ -1,7 +1,7 @@
-<?php namespace Torann\RelateIQ;
+<?php namespace Waschick\SalesforceIQ;
 
 /**
- * @see Torann\RelateIQ\RelateIQ
+ * @see Waschick\SalesforceIQ
  */
 class Facade extends \Illuminate\Support\Facades\Facade {
 
@@ -11,6 +11,6 @@ class Facade extends \Illuminate\Support\Facades\Facade {
 	 * @return string
 	 */
 	protected static function getFacadeAccessor() {
-        return 'relateiq';
+        return 'salesforceiq';
     }
 }

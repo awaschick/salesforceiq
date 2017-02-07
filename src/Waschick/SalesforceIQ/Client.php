@@ -1,6 +1,6 @@
-<?php namespace Torann\RelateIQ;
+<?php namespace Waschick\SalesforceIQ;
 
-use Torann\RelateIQ\Resource;
+use Waschick\SalesforceIQ\Resource;
 
 class Client {
 

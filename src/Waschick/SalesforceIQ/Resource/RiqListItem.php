@@ -1,4 +1,4 @@
-<?php namespace Torann\RelateIQ\Resource;
+<?php namespace Waschick\SalesforceIQ\Resource;
 
 class RiqListItem {
 
