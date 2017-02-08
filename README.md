@@ -29,7 +29,7 @@ Once SalesforceIQ Client is installed you need to register the service provider 
 
 
 ```php
-'Waschick\SalesforceIQ\ServiceProvider'
+'SalesforceIQ\ServiceProvider'
 ```
 
 > There is no need to add the Facade, the package will add it for you.
