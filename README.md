@@ -138,3 +138,8 @@ $contact->save();
 - Updated Namespaces
 - Changed endpoint URL to Salesforce domain 
 
+#### v.0.2.1
+
+- Removed extra namespace layer from class files
+
+

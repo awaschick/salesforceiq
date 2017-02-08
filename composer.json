@@ -1,7 +1,7 @@
 {
     "name": "waschick/salesforceiq",
     "description": "SalesforceIQ (RelateIQ) API v2 client for Laravel & standalone projects. Forked from torann/relateiq.",
-    "keywords": ["laravel", "laravel4", "relateiq", "api", "wrapper", "standalone"],
+    "keywords": ["laravel", "laravel4", "relateiq", "salesforceiq", "salesforce", "api", "wrapper", "standalone"],
     "license": "BSD 2-Clause",
     "authors": [
         {
@@ -14,12 +14,12 @@
     },
     "autoload": {
         "psr-0": {
-            "Waschick\\SalesforceIQ": "src/"
+            "SalesforceIQ": "src/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "0.2.1"
         }
     },
     "minimum-stability": "stable"
