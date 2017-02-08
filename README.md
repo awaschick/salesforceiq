@@ -142,4 +142,11 @@ $contact->save();
 
 - Removed extra namespace layer from class files
 
+#### v.0.2.2
+
+- Removed "Riq" prefix from file names and class names
+- Had to change "List" to "Collection" to avoid using PHP reserved word
+
+
+
 
