@@ -1,6 +1,6 @@
 <?php namespace SalesforceIQ\Resource;
 
-class RiqListField {
+class ListField {
 
     public $id;
     public $name;

@@ -3,7 +3,7 @@
 use DateTime;
 use DateTimeZone;
 
-class RiqList {
+class Collection {
 
     use PropertiesTrait;
 
@@ -39,7 +39,7 @@ class RiqList {
 
     public function listItemContainer()
     {
-        $listItemContainer = new RiqListItem;
+        $listItemContainer = new ListItem;
         $listItemContainer->setList($this);
 
         return $listItemContainer;
@@ -47,18 +47,18 @@ class RiqList {
 
     public function getListItem($listItemId)
     {
-        return RiqListItem::find($this, $listItemId);
+        return ListItem::find($this, $listItemId);
     }
 
     public function getListItems()
     {
         //TODO:: paginate?
-        return RiqListItem::all($this);
+        return ListItem::all($this);
     }
 
     public function getListItemsForContacts($contacts)
     {
-        return RiqListItem::getContacts($this, $contacts);
+        return ListItem::getContacts($this, $contacts);
     }
 
     public function lookupFieldName($name)
@@ -77,7 +77,7 @@ class RiqList {
      * Find a list by its ID.
      *
      * @param  string  $id
-     * @return \Torann\RelateIQ\Resource\RiqList
+     * @return \SalesforceIQ\Resource\Collection
      */
     public static function find($id)
     {
@@ -128,7 +128,7 @@ class RiqList {
     /**
      * Parse server response properties.
      *
-     * @return \Torann\RelateIQ\Resource\RiqList
+     * @return \SalesforceIQ\Resource\Collection
      */
     public static function parseResponse($response)
     {
@@ -140,7 +140,7 @@ class RiqList {
         // Set field properties
         foreach ($response['fields'] as $fieldResponse)
         {
-            $properties['list']['fields'][] = new RiqListField($fieldResponse);
+            $properties['list']['fields'][] = new ListField($fieldResponse);
         }
 
         // Create new object

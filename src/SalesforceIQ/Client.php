@@ -18,7 +18,7 @@ class Client {
      */
     function __construct($key, $secret, array $listId = array())
     {
-        Resource\RiqConfig::setKey($key, $secret);
+        Resource\Config::setKey($key, $secret);
 
         $this->listId = $listId;
     }
@@ -28,11 +28,11 @@ class Client {
      *
      * @param  string  $id
      *
-     * @return \Torann\RelateIQ\Resource\RiqList
+     * @return \SalesforceIQ\Resource\Collection
      */
     public function getList($id)
     {
-        return Resource\RiqList::find($id);
+        return Resource\Collection::find($id);
     }
 
     /**
@@ -43,7 +43,7 @@ class Client {
     public function getLists()
     {
         if(count($this->lists) < 1) {
-            $this->lists = Resource\RiqList::all();
+            $this->lists = Resource\Collection::all();
         }
 
         return $this->lists;
@@ -54,11 +54,11 @@ class Client {
      *
      * @param  string  $id
      *
-     * @return \Torann\RelateIQ\Resource\RiqContact
+     * @return \SalesforceIQ\Resource\Contact
      */
     public function getContact($id)
     {
-        return Resource\RiqContact::find($id);
+        return Resource\Contact::find($id);
     }
 
     /**
@@ -68,7 +68,7 @@ class Client {
      */
     public function getContacts()
     {
-        return Resource\RiqContact::all();
+        return Resource\Contact::all();
     }
 
     /**
@@ -76,11 +76,11 @@ class Client {
      *
      * @param  array $properties
      *
-     * @return \Torann\RelateIQ\Resource\RiqContact
+     * @return \SalesforceIQ\Resource\Contact
      */
     public function newContact(array $properties = array())
     {
-        $contact = new Resource\RiqContact($properties);
+        $contact = new Resource\Contact($properties);
 
         return $contact->save();
     }

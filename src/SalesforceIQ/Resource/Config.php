@@ -1,6 +1,6 @@
 <?php namespace SalesforceIQ\Resource;
 
-class RiqConfig {
+class Config {
 
     /**
      * API authentication key.

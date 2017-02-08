@@ -1,6 +1,9 @@
 <?php namespace SalesforceIQ\Resource;
 
-class RiqListItem {
+Use \SalesforceIQ\Contact;
+Use \SalesforceIQ\Collection;
+
+class ListItem {
 
     public $id;
     public $modifiedDate;
@@ -58,7 +61,7 @@ class RiqListItem {
         }
     }
 
-    public function setList(RiqList $list)
+    public function setList(List $list)
     {
         $this->list = $list;
         $this->listId = $list->id;
@@ -69,7 +72,7 @@ class RiqListItem {
         return $this->list;
     }
 
-    public function setContact(RiqContact $contact)
+    public function setContact(Contact $contact)
     {
         $this->contactIds = array($contact->id);
     }
@@ -141,7 +144,7 @@ class RiqListItem {
     /**
      * Parse server response properties.
      *
-     * @return \Torann\RelateIQ\Resource\RiqListItem
+     * @return \SalesforceIQ\Resource\ListItem
      */
     public static function parseResponse($list, $response)
     {

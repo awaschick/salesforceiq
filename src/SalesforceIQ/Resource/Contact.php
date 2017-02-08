@@ -3,7 +3,7 @@
 use DateTime;
 use DateTimeZone;
 
-class RiqContact {
+class Contact {
 
     use PropertiesTrait;
 
@@ -68,7 +68,7 @@ class RiqContact {
      * Find a contact by its ID.
      *
      * @param  string  $id
-     * @return \Torann\RelateIQ\Resource\RiqContact
+     * @return \SalesforceIQ\Resource\Contact
      */
     public static function find($id)
     {
@@ -117,7 +117,7 @@ class RiqContact {
     /**
      * Parse server response properties.
      *
-     * @return \Torann\RelateIQ\Resource\RiqContact
+     * @return \SalesforceIQ\Resource\Contact
      */
     public static function parseResponse($response)
     {

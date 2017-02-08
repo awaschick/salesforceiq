@@ -13,12 +13,12 @@ class ApiRequest {
     function __construct($key = null, $secret = null)
     {
         if ($key && $secret) {
-            RiqConfig::setKey($key, $secret);
+            Config::setKey($key, $secret);
         }
 
         // Set key & secret
-        $this->key    = RiqConfig::$key;
-        $this->secret = RiqConfig::$secret;
+        $this->key    = Config::$key;
+        $this->secret = Config::$secret;
     }
 
     /**
