@@ -1,6 +1,6 @@
-<?php namespace Waschick\SalesforceIQ;
+<?php namespace SalesforceIQ;
 
-use Waschick\SalesforceIQ\Resource;
+use SalesforceIQ\Resource;
 
 class Client {
 

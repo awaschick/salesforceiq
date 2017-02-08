@@ -1,7 +1,7 @@
-<?php namespace Waschick\SalesforceIQ;
+<?php namespace SalesforceIQ;
 
 /**
- * @see Waschick\SalesforceIQ
+ * @see SalesforceIQ
  */
 class Facade extends \Illuminate\Support\Facades\Facade {
 

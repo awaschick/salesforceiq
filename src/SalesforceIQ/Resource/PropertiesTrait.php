@@ -1,4 +1,4 @@
-<?php namespace Waschick\SalesforceIQ\Resource;
+<?php namespace SalesforceIQ\Resource;
 
 trait PropertiesTrait
 {

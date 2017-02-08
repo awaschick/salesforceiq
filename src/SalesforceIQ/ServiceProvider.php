@@ -1,4 +1,4 @@
-<?php namespace Waschick\SalesforceIQ;
+<?php namespace SalesforceIQ;
 
 use Illuminate\Foundation\AliasLoader;
 
