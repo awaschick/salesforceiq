@@ -147,6 +147,11 @@ $contact->save();
 - Removed "Riq" prefix from file names and class names
 - Had to change "List" to "Collection" to avoid using PHP reserved word
 
+#### v.0.2.3
+
+- Enhanced list item response parsing to generate a more friendly associative array of results by combining the raw data with the field definitions
+- Added GetAllListItems($listId) function to the Client to retrieve the full contents of a specific list
+
 
 
 
