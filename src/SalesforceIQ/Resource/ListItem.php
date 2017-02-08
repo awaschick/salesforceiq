@@ -1,7 +1,7 @@
 <?php namespace SalesforceIQ\Resource;
 
-Use \SalesforceIQ\Contact;
-Use \SalesforceIQ\Collection;
+Use \SalesforceIQ\Resource\Contact;
+Use \SalesforceIQ\resource\Collection;
 
 class ListItem {
 
@@ -13,6 +13,7 @@ class ListItem {
     public $contactIds = array();
     public $name;
     public $fieldValues = array();
+    public $state = array();
 
     public function json()
     {
@@ -61,7 +62,7 @@ class ListItem {
         }
     }
 
-    public function setList(List $list)
+    public function setList(Collection $list)
     {
         $this->list = $list;
         $this->listId = $list->id;
@@ -126,11 +127,13 @@ class ListItem {
      */
     public static function handleResponse($list, $response)
     {
-        if(isset($response->objects))
+        if(isset($response['objects']))
         {
             $objects = array();
 
-            foreach($response->objects as $object) {
+            xdebug_break();
+
+            foreach($response['objects'] as $object) {
                 $objects[] = self::parseResponse($list, $object);
             }
 
@@ -154,13 +157,37 @@ class ListItem {
         $listItem->createdDate = $response['createdDate'];
         $listItem->accountId = $response['accountId'];
         $listItem->contactIds = $response['contactIds'];
+        $listItem->name = $response['name'];
+        $fieldDefinitions = $list->getProperty('list')['fields'];
 
+        // put the values into a convenient name/value associative array 
+        foreach($fieldDefinitions as $fieldDefinition) {
+            if (array_key_exists($fieldDefinition->id, $response['fieldValues'])) {
+                $stateItem = [
+                    'name' => $fieldDefinition->name,
+                    'field_id' => $fieldDefinition->id,
+                    'dataType' => $fieldDefinition->dataType,
+                    'value' => []
+                ];
+                $fieldValue = $response['fieldValues'][$fieldDefinition->id];
+                foreach ($fieldValue as $fieldValueElement) {
+                    if ($fieldDefinition->dataType == 'List') {
+                        $listOptionIndex = $fieldValueElement['raw'];
+                        $stateItem['value'][] = $fieldDefinition->listOptions[$listOptionIndex]['display'];
+                    } else {
+                        $stateItem['value'][] = $fieldValueElement['raw'];
+                    }
+                }
+                $listItem->state[] = $stateItem;
+            }
+        }
+        
+        // copy the raw field data, in case you need that for some bizarre reason  
         foreach($response['fieldValues'] as $key => $fieldValue){
-            $listItem->fieldValues[$key] = $fieldValue;
+            $listItem->fieldValues[$key] = $fieldValue;            
         }
 
         $listItem->setList($list);
-
         return $listItem;
     }
 }

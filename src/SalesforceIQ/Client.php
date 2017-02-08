@@ -85,6 +85,14 @@ class Client {
         return $contact->save();
     }
 
+
+    // get all list items for a specific list ID. 
+    public function getAllListItems($listId)
+    {
+        $sourceList = $this->getList($listId);
+        return $sourceList->getlistItems();
+    }
+
     /**
      * Get all list items for a contact.
      *
