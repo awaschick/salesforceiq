@@ -130,13 +130,9 @@ class ListItem {
         if(isset($response['objects']))
         {
             $objects = array();
-
-            xdebug_break();
-
             foreach($response['objects'] as $object) {
                 $objects[] = self::parseResponse($list, $object);
             }
-
             return $objects;
         }
         else {
