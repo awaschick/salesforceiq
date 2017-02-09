@@ -12,7 +12,7 @@ This will help you access the SalesforceIQ REST API using PHP.  The API is simpl
 ## Installation
 
 - [SalesforceIQ Client on Packagist](https://packagist.org/packages/waschick/salesforceiq)
-- [SalesforceIQ Client on GitHub](https://github.com/waschick/salesforce)
+- [SalesforceIQ Client on GitHub](https://github.com/awaschick/salesforceiq)
 - [Forked from Torann/RelateIQ](https://github.com/torann/relateiq)
 
 
