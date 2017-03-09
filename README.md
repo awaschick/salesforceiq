@@ -152,6 +152,9 @@ $contact->save();
 - Enhanced list item response parsing to generate a more friendly associative array of results by combining the raw data with the field definitions
 - Added GetAllListItems($listId) function to the Client to retrieve the full contents of a specific list
 
+#### v.0.2.4
+
+- Fixed problem with retrieving proper value of list items; Salesforce IQ supplies list item definitions with an ID and display value, and then refers to the ID value, but we were incorrectly using the array index to translate.  Constructed a reference array with the right values.
 
 
 
