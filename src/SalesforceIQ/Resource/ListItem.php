@@ -158,6 +158,15 @@ class ListItem {
 
         // put the values into a convenient name/value associative array 
         foreach($fieldDefinitions as $fieldDefinition) {
+
+            // translate the list options array into something we can directly call for when constructing values 
+            if (sizeOf($fieldDefinition->listOptions > 0)) {
+                $fieldDefinition->listOptionsArray = Array();
+                foreach ($fieldDefinition->listOptions as $thisListOption) {
+                    $fieldDefinition->listOptionsArray[$thisListOption['id']] = $thisListOption['display'];
+                }
+            }
+
             if (array_key_exists($fieldDefinition->id, $response['fieldValues'])) {
                 $stateItem = [
                     'name' => $fieldDefinition->name,
@@ -169,7 +178,7 @@ class ListItem {
                 foreach ($fieldValue as $fieldValueElement) {
                     if ($fieldDefinition->dataType == 'List') {
                         $listOptionIndex = $fieldValueElement['raw'];
-                        $stateItem['value'][] = $fieldDefinition->listOptions[$listOptionIndex]['display'];
+                        $stateItem['value'][] = $fieldDefinition->listOptionsArray[$listOptionIndex];
                     } else {
                         $stateItem['value'][] = $fieldValueElement['raw'];
                     }
