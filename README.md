@@ -156,5 +156,8 @@ $contact->save();
 
 - Fixed problem with retrieving proper value of list items; Salesforce IQ supplies list item definitions with an ID and display value, and then refers to the ID value, but we were incorrectly using the array index to translate.  Constructed a reference array with the right values.
 
+#### v.0.2.5
+
+- Added "User" as a resource type, with the ability to retrieve the name and email of a user ID as an array. 
 
 

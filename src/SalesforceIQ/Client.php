@@ -50,6 +50,18 @@ class Client {
     }
 
     /**
+     * Get specified user.
+     *
+     * @param  string  $id
+     *
+     * @return \SalesforceIQ\Resource\Contact
+     */
+    public function getUser($id)
+    {
+        return Resource\User::find($id);
+    }
+
+    /**
      * Get specified contact.
      *
      * @param  string  $id
